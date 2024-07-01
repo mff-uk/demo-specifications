@@ -3,7 +3,7 @@
   <html>
     <head>
       <meta charset="utf-8" />
-      <title>Vocabulary Test 1</title>
+      <title>DCAT</title>
       <meta name="color-scheme" content="light dark">
       <script type="application/ld+json">
         {
@@ -15,7 +15,7 @@
   "http://purl.org/dc/terms/title": [
     {
       "@language": "en",
-      "@value": "Vocabulary Test 1"
+      "@value": "DCAT"
     }
   ],
   "https://w3id.org/dsv#artefact": [
@@ -66,7 +66,17 @@
     }
   ],
   "https://w3id.org/dsv#usedVocabularies": [
-    []
+    [
+      {
+        "@id": "https://datagov-cz.github.io/cache-slovniku/skos.rdf"
+      },
+      {
+        "@id": "https://datagov-cz.github.io/cache-slovniku/rdfs.ttl"
+      },
+      {
+        "@id": "https://datagov-cz.github.io/cache-slovniku/dublin_core_terms.ttl"
+      }
+    ]
   ]
 }
       </script>
@@ -78,30 +88,12 @@
       <script class="remove">
         // All config options at https://respec.org/docs/
         var respecConfig = {
-          specStatus: "ED",
-                shortName: "test-1",               
-                showPreviousVersion: false,
-                prevRecURI: "https://ofn.gov.cz/rozhraní-katalogů-otevřených-dat/2021-01-11/",
-                thisVersion: "https://ofn.gov.cz/dcat-ap-cz-nkod/draft/",
-                latestVersion: "https://ofn.gov.cz/dcat-ap-cz-nkod/",
-                editors: [{
-                  name: "Jakub Klímek",
-                  orcid: "0000-0001-7234-3051",
-                  company:    "Digitální a informační agentura",
-                  companyURL: "https://dia.gov.cz"
-                }],
-                inlineCSS: "true",
-                github: "https://github.com/datagov-cz/otevrene-formalni-normy/",
-                otherLinks: [{
-                    key: "Odkazy",
-                    data: [{
-                        value: "Portál otevřených dat",
-                        href: "https://data.gov.cz"
-                    },{
-                        value: "Kontaktní e-mail",
-                        href: "mailto:otevrenadata@dia.gov.cz"
-                    }]
-                }]
+          specStatus: "unofficial",
+          editors: [{ name: "Dataspecer", url: "https://dataspecer.com" }]
+          //github: "some-org/mySpec",
+          //shortName: "dahut",
+          //xref: "web-platform",
+          //group: "my-working-group",
         };
       </script>
           <style>
@@ -116,13 +108,11 @@
       <section id="abstract">
         <p>
           This file documents
-          <strong>Vocabulary Test 1</strong>.</p>
+          <strong>DCAT</strong>.</p>
       </section>
-<!--      <section id="sotd">
+      <section id="sotd">
         <p>todo.</p>
-      </section> -->
-
-      <p class="copyright"></p>
+      </section>
 
       <section>
         <h1>Attachments</h1>
@@ -142,7 +132,7 @@
         <h1>Vocabulary Overview</h1>
 
           <figure>
-            <img src="./0a45e5fd-6c4d-42b2-a8ca-3d6f49ae8572.svg" alt="alt text 2" />
+            <img src="./c1e6cbbe-77b5-45b7-8909-1254b11441bf.svg" alt="alt text 2" />
             <figcaption>title</figcaption>
           </figure>
 
@@ -150,109 +140,234 @@
         This section lists the classes matching the base namespace of this vocabulary.
         
 
-              <section id="jittery-information">
-              <h4>Jittery Information</h4>
+              <section id="cataloged-resource">
+              <h4>Cataloged Resource</h4>
 
               <table class="def">
                 <tr>
                   <td>IRI</td>
-                  <td><a href="https://my.vocabulary/jittery-information">https://my.vocabulary/jittery-information</a></td>
-                </tr>
-              </table>
-            </section>
-              <section id="testy-idea">
-              <h4>Testy Idea</h4>
-
-              <table class="def">
-                <tr>
-                  <td>IRI</td>
-                  <td><a href="https://my.vocabulary/testy-idea">https://my.vocabulary/testy-idea</a></td>
+                  <td><a href="http://www.w3.org/ns/Resource">http://www.w3.org/ns/Resource</a></td>
                 </tr>
                 <tr>
-                  <td>Parent classes</td>
-                  <td><a href="#ludicrous-part">Ludicrous Part</a></td>
-                </tr>
-              </table>
-            </section>
-              <section id="ludicrous-part">
-              <h4>Ludicrous Part</h4>
-
-              <table class="def">
-                <tr>
-                  <td>IRI</td>
-                  <td><a href="https://my.vocabulary/ludicrous-part">https://my.vocabulary/ludicrous-part</a></td>
+                  <td>Description</td>
+                  <td>Resource published or curated by a single agent.</td>
                 </tr>
                 <tr>
                   <td>Sub-classes</td>
-                  <td><a href="#testy-idea">Testy Idea</a></td>
+                  <td><a href="#dataset">Dataset</a></td>
+                </tr>
+              </table>
+            </section>
+              <section id="catalog">
+              <h4>Catalog</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="http://www.w3.org/ns/Catalog">http://www.w3.org/ns/Catalog</a></td>
+                </tr>
+                <tr>
+                  <td>Description</td>
+                  <td>A curated collection of metadata about resources.</td>
+                </tr>
+                <tr>
+                  <td>Parent classes</td>
+                  <td><a href="#dataset">Dataset</a></td>
+                </tr>
+              </table>
+            </section>
+              <section id="dataset">
+              <h4>Dataset</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="http://www.w3.org/ns/Dataset">http://www.w3.org/ns/Dataset</a></td>
+                </tr>
+                <tr>
+                  <td>Description</td>
+                  <td>A collection of data, published or curated by a single agent, and available for access or download in one or more representations.</td>
+                </tr>
+                <tr>
+                  <td>Parent classes</td>
+                  <td><a href="#cataloged-resource">Cataloged Resource</a></td>
+                </tr>
+                <tr>
+                  <td>Sub-classes</td>
+                  <td><a href="#catalog">Catalog</a></td>
+                </tr>
+              </table>
+            </section>
+              <section id="distribution">
+              <h4>Distribution</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="http://www.w3.org/ns/Distribution">http://www.w3.org/ns/Distribution</a></td>
+                </tr>
+                <tr>
+                  <td>Description</td>
+                  <td>A specific representation of a dataset. A dataset might be available in multiple serializations that may differ in various ways, including natural language, media-type or format, schematic organization, temporal and spatial resolution, level of detail or profiles (which might specify any or all of the above).</td>
+                </tr>
+              </table>
+            </section>
+              <section id="role">
+              <h4>Role</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="http://www.w3.org/ns/Role">http://www.w3.org/ns/Role</a></td>
+                </tr>
+                <tr>
+                  <td>Description</td>
+                  <td>A role is the function of a resource or agent with respect to another resource, in the context of resource attribution or resource relationships.</td>
+                </tr>
+                <tr>
+                  <td>Parent classes</td>
+                  <td><a href="http://www.w3.org/2004/02/skos/core#Concept">Concept</a></td>
                 </tr>
               </table>
             </section>
 
 
         <h2>Properties (attributes and associations)</h2>
-            <section id="rwcf1z3wywlxu3w2h9">
+            <section id="h0lk16d1n1ly2qcs1r">
 
-              <h4>test relation</h4>
-
-              <table class="def">
-                <tr>
-                  <td>IRI</td>
-                  <td><a href="https://my.vocabulary/test-relation">https://my.vocabulary/test-relation</a></td>
-                </tr>
-                <tr>
-                  <td>Domain</td>
-                  <td><a href="#testy-idea">Testy Idea</a></td>
-                </tr>
-                <tr>
-                  <td>Range</td>
-                  <td><a href="#jittery-information">Jittery Information</a></td>
-                </tr>
-              </table>
-            </section>
-            <section id="e3z6z8uhgt7lxu3whzf">
-
-              <h4>test</h4>
+              <h4>Temporal resolution</h4>
 
               <table class="def">
                 <tr>
                   <td>IRI</td>
-                  <td><a href="https://my.vocabulary/test">https://my.vocabulary/test</a></td>
+                  <td><a href="http://www.w3.org/ns/temporalResolution">http://www.w3.org/ns/temporalResolution</a></td>
                 </tr>
                 <tr>
                   <td>Description</td>
-                  <td>attribute 1</td>
+                  <td>Minimum time period resolvable in the dataset.</td>
                 </tr>
                 <tr>
                   <td>Domain</td>
-                  <td><a href="#testy-idea">Testy Idea</a></td>
+                  <td><a href="#dataset">Dataset</a></td>
                 </tr>
                 <tr>
                   <td>Range</td>
-                  <td><a href="http://www.w3.org/2001/XMLSchema#base64Binary"></a></td>
+                  <td><a href="http://www.w3.org/2001/XMLSchema#duration"></a></td>
                 </tr>
               </table>
             </section>
-            <section id="ll0s9n22zealxu3ww7j">
+            <section id="lhqn6s003cly2qhfcy">
 
-              <h4>att2</h4>
+              <h4>Access URL</h4>
 
               <table class="def">
                 <tr>
                   <td>IRI</td>
-                  <td><a href="https://my.vocabulary/att2">https://my.vocabulary/att2</a></td>
+                  <td><a href="http://www.w3.org/ns/accessURL">http://www.w3.org/ns/accessURL</a></td>
                 </tr>
                 <tr>
                   <td>Description</td>
-                  <td>attttt2</td>
+                  <td>A URL of the resource that gives access to a distribution of the dataset. E.g., landing page, feed, SPARQL endpoint.</td>
                 </tr>
                 <tr>
                   <td>Domain</td>
-                  <td><a href="#ludicrous-part">Ludicrous Part</a></td>
+                  <td><a href="#distribution">Distribution</a></td>
                 </tr>
                 <tr>
                   <td>Range</td>
-                  <td><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"></a></td>
+                  <td><a href="http://www.w3.org/2000/01/rdf-schema#Resource">Resource</a></td>
+                </tr>
+              </table>
+            </section>
+            <section id="g0nveggymlhly2qiv3m">
+
+              <h4>dataset</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="http://www.w3.org/ns/dataset">http://www.w3.org/ns/dataset</a></td>
+                </tr>
+                <tr>
+                  <td>Description</td>
+                  <td>A dataset that is listed in the catalog.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td><a href="#catalog">Catalog</a></td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td><a href="#dataset">Dataset</a></td>
+                </tr>
+              </table>
+            </section>
+            <section id="pfyoupaw3xsly2qkb94">
+
+              <h4>distribution</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="http://www.w3.org/ns/distribution">http://www.w3.org/ns/distribution</a></td>
+                </tr>
+                <tr>
+                  <td>Description</td>
+                  <td>distribution</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td><a href="#dataset">Dataset</a></td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td><a href="#distribution">Distribution</a></td>
+                </tr>
+              </table>
+            </section>
+            <section id="6u708n9v3omly2qljar">
+
+              <h4>Theme taxonomy</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="http://www.w3.org/ns/themeTaxonomy">http://www.w3.org/ns/themeTaxonomy</a></td>
+                </tr>
+                <tr>
+                  <td>Description</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td><a href="#catalog">Catalog</a></td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td><a href="http://www.w3.org/2004/02/skos/core#ConceptScheme">Concept Scheme</a></td>
+                </tr>
+              </table>
+            </section>
+            <section id="r3esxtr86cly2qmj5x">
+
+              <h4>Theme</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="http://www.w3.org/ns/theme">http://www.w3.org/ns/theme</a></td>
+                </tr>
+                <tr>
+                  <td>Description</td>
+                  <td>A main category of the resource. A resource can have multiple themes.</td>
+                </tr>
+                <tr>
+                  <td>Domain</td>
+                  <td><a href="#cataloged-resource">Cataloged Resource</a></td>
+                </tr>
+                <tr>
+                  <td>Range</td>
+                  <td><a href="http://www.w3.org/2004/02/skos/core#Concept">Concept</a></td>
                 </tr>
               </table>
             </section>

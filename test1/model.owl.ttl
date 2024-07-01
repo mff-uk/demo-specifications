@@ -1,26 +1,53 @@
-@base <https://my.vocabulary/test#> .
+@base <http://www.w3.org/ns/dcat#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 
-<https://my.vocabulary/jittery-information> a owl:Class, rdfs:Class;
-    rdfs:label "Jittery Information"@en.
-<https://my.vocabulary/ludicrous-part> a owl:Class, rdfs:Class;
-    rdfs:label "Ludicrous Part"@en.
-<https://my.vocabulary/att2> a rdf:Property, owl:DatatypeProperty;
-    rdfs:label "att2"@en;
-    rdfs:comment "attttt2"@en;
-    rdfs:domain <https://my.vocabulary/ludicrous-part>;
-    rdfs:range rdf:langString.
-<https://my.vocabulary/testy-idea> a owl:Class, rdfs:Class;
-    rdfs:label "Testy Idea"@en;
-    rdfs:subClassOf <https://my.vocabulary/ludicrous-part>.
-<https://my.vocabulary/test> a rdf:Property, owl:DatatypeProperty;
-    rdfs:label "test"@en;
-    rdfs:comment "attribute 1"@en;
-    rdfs:domain <https://my.vocabulary/testy-idea>;
-    rdfs:range <http://www.w3.org/2001/XMLSchema#base64Binary>.
-<https://my.vocabulary/test-relation> a rdf:Property, owl:ObjectProperty;
-    rdfs:label "test relation"@en;
-    rdfs:domain <https://my.vocabulary/testy-idea>;
-    rdfs:range <https://my.vocabulary/jittery-information>.
+<http://www.w3.org/ns/Distribution> a owl:Class, rdfs:Class;
+    rdfs:label "Distribcue"@cs, "Distribution"@en;
+    rdfs:comment "Popis distribuce"@cs, "A specific representation of a dataset. A dataset might be available in multiple serializations that may differ in various ways, including natural language, media-type or format, schematic organization, temporal and spatial resolution, level of detail or profiles (which might specify any or all of the above)."@en.
+<http://www.w3.org/ns/accessURL> a rdf:Property, owl:ObjectProperty;
+    rdfs:label "Přístupové URL"@cs, "Access URL"@en;
+    rdfs:comment "Přístupové URL - definice"@cs, "A URL of the resource that gives access to a distribution of the dataset. E.g., landing page, feed, SPARQL endpoint."@en;
+    rdfs:domain <http://www.w3.org/ns/Distribution>;
+    rdfs:range rdfs:Resource.
+<http://www.w3.org/ns/Dataset> a owl:Class, rdfs:Class;
+    rdfs:label "Datová sada"@cs, "Dataset"@en;
+    rdfs:comment "Kolekce dat, ke stažení."@cs, "A collection of data, published or curated by a single agent, and available for access or download in one or more representations."@en;
+    rdfs:subClassOf <http://www.w3.org/ns/Resource>.
+<http://www.w3.org/ns/temporalResolution> a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "Časové rozlišení"@cs, "Temporal resolution"@en;
+    rdfs:comment "Minimální časový interval rozlišitelný v datové sadě."@cs, "Minimum time period resolvable in the dataset."@en;
+    rdfs:domain <http://www.w3.org/ns/Dataset>;
+    rdfs:range <http://www.w3.org/2001/XMLSchema#duration>.
+<http://www.w3.org/ns/distribution> a rdf:Property, owl:ObjectProperty;
+    rdfs:label "distribuce"@cs, "distribution"@en;
+    rdfs:comment "Dostupné distribuce datové sady"@cs, "distribution"@en;
+    rdfs:domain <http://www.w3.org/ns/Dataset>;
+    rdfs:range <http://www.w3.org/ns/Distribution>.
+<http://www.w3.org/ns/Resource> a owl:Class, rdfs:Class;
+    rdfs:label "Katalogizovaný zdroj"@cs, "Cataloged Resource"@en;
+    rdfs:comment "Zdroj publikovaný agentem."@cs, "Resource published or curated by a single agent."@en.
+<http://www.w3.org/ns/theme> a rdf:Property, owl:ObjectProperty;
+    rdfs:label "Téma"@cs, "Theme"@en;
+    rdfs:comment "Téma"@cs, "A main category of the resource. A resource can have multiple themes."@en;
+    rdfs:domain <http://www.w3.org/ns/Resource>;
+    rdfs:range <http://www.w3.org/2004/02/skos/core#Concept>.
+<http://www.w3.org/ns/Role> a owl:Class, rdfs:Class;
+    rdfs:label "Role"@cs, "Role"@en;
+    rdfs:comment "popis role"@cs, "A role is the function of a resource or agent with respect to another resource, in the context of resource attribution or resource relationships."@en;
+    rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept>.
+<http://www.w3.org/ns/Catalog> a owl:Class, rdfs:Class;
+    rdfs:label "Katalog"@cs, "Catalog"@en;
+    rdfs:comment "Kolekce metadat o zdrojích."@cs, "A curated collection of metadata about resources."@en;
+    rdfs:subClassOf <http://www.w3.org/ns/Dataset>.
+<http://www.w3.org/ns/themeTaxonomy> a rdf:Property, owl:ObjectProperty;
+    rdfs:label "Témata"@cs, "Theme taxonomy"@en;
+    rdfs:comment "Použitý seznam témat"@cs;
+    rdfs:domain <http://www.w3.org/ns/Catalog>;
+    rdfs:range <http://www.w3.org/2004/02/skos/core#ConceptScheme>.
+<http://www.w3.org/ns/dataset> a rdf:Property, owl:ObjectProperty;
+    rdfs:label "datová sada"@cs, "dataset"@en;
+    rdfs:comment "Datová sada popsaná v katalogu"@cs, "A dataset that is listed in the catalog."@en;
+    rdfs:domain <http://www.w3.org/ns/Catalog>;
+    rdfs:range <http://www.w3.org/ns/Dataset>.
