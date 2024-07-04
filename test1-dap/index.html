@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+  
+  
+  <html>
+    <head>
+      <meta charset="utf-8" />
+      <title>DCAT-DAP</title>
+      <meta name="color-scheme" content="light dark">
+      <script type="application/ld+json">
+        {
+  "@id": ".",
+  "@type": [
+    "http://purl.org/dc/terms/Standard",
+    "http://www.w3.org/2002/07/owl#Ontology"
+  ],
+  "http://purl.org/dc/terms/title": [
+    {
+      "@language": "en",
+      "@value": "DCAT-DAP"
+    }
+  ],
+  "https://w3id.org/dsv#artefact": [
+    {
+      "@type": [
+        "http://www.w3.org/ns/dx/prof/ResourceDescriptor"
+      ],
+      "http://www.w3.org/ns/dx/prof/hasArtifact": [
+        {
+          "@id": "./model.owl.ttl"
+        }
+      ],
+      "http://www.w3.org/ns/dx/prof/hasRole": [
+        {
+          "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary"
+        }
+      ]
+    },
+    {
+      "@type": [
+        "http://www.w3.org/ns/dx/prof/ResourceDescriptor"
+      ],
+      "http://www.w3.org/ns/dx/prof/hasArtifact": [
+        {
+          "@id": "./dsv.ttl"
+        }
+      ],
+      "http://www.w3.org/ns/dx/prof/hasRole": [
+        {
+          "@id": "http://www.w3.org/ns/dx/prof/role/schema"
+        }
+      ]
+    },
+    {
+      "@type": [
+        "http://www.w3.org/ns/dx/prof/ResourceDescriptor"
+      ],
+      "http://www.w3.org/ns/dx/prof/hasArtifact": [
+        {
+          "@id": "."
+        }
+      ],
+      "http://www.w3.org/ns/dx/prof/hasRole": [
+        {
+          "@id": "http://www.w3.org/ns/dx/prof/role/specification"
+        }
+      ]
+    }
+  ],
+  "https://w3id.org/dsv#usedVocabularies": [
+    [
+      {
+        "@id": "https://mff-uk.github.io/demo-specifications/test1/"
+      },
+      {
+        "@id": "https://datagov-cz.github.io/cache-slovniku/foaf.ttl"
+      }
+    ]
+  ]
+}
+      </script>
+      <script
+        src="https://www.w3.org/Tools/respec/respec-w3c"
+        class="remove"
+        defer
+      ></script>
+      <script class="remove">
+        // All config options at https://respec.org/docs/
+        var respecConfig = {
+          specStatus: "unofficial",
+          editors: [{ name: "Dataspecer", url: "https://dataspecer.com" }]
+          //github: "some-org/mySpec",
+          //shortName: "todo",
+          //xref: "web-platform",
+          //group: "my-working-group",
+        };
+      </script>
+          <style>
+      .figure img, .sidefigure img, figure img, .figure object, .sidefigure object, figure object, img, .img {
+      max-width: 100%;
+      margin: auto;
+      height: auto;
+      }
+    </style>
+    </head>
+    <body>
+      <section id="abstract">
+        <p>
+          This file documents
+          <strong>DCAT-DAP</strong>.</p>
+      </section>
+      
+      <!--<section id="sotd">
+      </section>-->
+
+      <section>
+        <h1>Vocabulary Overview</h1>
+
+          <figure>
+            <img src="./e7e7aa7c-d0f2-4374-8fb6-ee5b46c9ee20.svg" alt="alt text 2" />
+            <figcaption>Overview diagram</figcaption>
+          </figure>
+
+        <h2>Classes</h2>
+        This section lists the classes matching the base namespace of this vocabulary.
+        
+
+
+            <section id="cataloged-resource">
+              <h4>Cataloged Resource</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="Resource-profile">Resource-profile</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>Cataloged Resource</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Resource published or curated by a single agent.</td>
+                </tr>
+                <tr>
+                  <td>Profiles</td>
+                  <td><a href="https://mff-uk.github.io/demo-specifications/test1/#cataloged-resource">Cataloged Resource</a> (<a href="http://www.w3.org/ns/dcat#Resource">dcat:Resource</a>)</td>
+                </tr>
+
+
+
+              </table>
+            </section>
+            <section id="distribution">
+              <h4>Distribution</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="Distribution-profile">Distribution-profile</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>Distribution</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>dist desc</td>
+                </tr>
+                <tr>
+                  <td>Profiles</td>
+                  <td><a href="https://mff-uk.github.io/demo-specifications/test1/#distribution">Distribution</a> (<a href="http://www.w3.org/ns/dcat#Distribution">dcat:Distribution</a>)</td>
+                </tr>
+
+
+
+              </table>
+            </section>
+            <section id="catalog">
+              <h4>Catalog</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="Catalog-profile">Catalog-profile</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>Catalog</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>A curated collection of metadata about resources.</td>
+                </tr>
+                <tr>
+                  <td>Profiles</td>
+                  <td><a href="https://mff-uk.github.io/demo-specifications/test1/#catalog">Catalog</a> (<a href="http://www.w3.org/ns/dcat#Catalog">dcat:Catalog</a>)</td>
+                </tr>
+
+
+
+              </table>
+            </section>
+            <section id="dataset">
+              <h4>Dataset</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="Dataset-profile">Dataset-profile</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>Dataset</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>Dataset description</td>
+                </tr>
+                <tr>
+                  <td>Profiles</td>
+                  <td><a href="https://mff-uk.github.io/demo-specifications/test1/#dataset">Dataset</a> (<a href="http://www.w3.org/ns/dcat#Dataset">dcat:Dataset</a>)</td>
+                </tr>
+
+
+
+              </table>
+            </section>
+            <section id="agent">
+              <h4>Agent</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="Agent-profile">Agent-profile</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>Agent</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>An agent (eg. person, group, software or physical artifact).</td>
+                </tr>
+                <tr>
+                  <td>Profiles</td>
+                  <td><a href="http://xmlns.com/foaf/0.1/Agent">Agent</a> (<a href="http://xmlns.com/foaf/0.1/Agent">foaf:Agent</a>)</td>
+                </tr>
+
+
+
+              </table>
+            </section>
+
+        <h2>Properties</h2>
+
+          <section id="atp7dyxsoytly727182">
+            <h4>resource title</h4>
+
+            <table class="def">
+              <tr>
+                <td>IRI</td>
+                <td><a href="title-profile-resource">title-profile-resource</a></td>
+              </tr>
+              <tr>
+                <td>Label</td>
+                <td>resource title</td>
+              </tr>
+              <tr>
+                <td>Definition</td>
+                <td>A name given to the resource.</td>
+              </tr>
+              <tr>
+                <td>Domain</td>
+                <td><a href="#cataloged-resource">Cataloged Resource</a></td>
+              </tr>
+              <tr>
+                <td>Range</td>
+                <td><a href="https://datagov-cz.github.io/cache-slovniku/rdfs.ttl#literal">Literal</a></td>
+              </tr>
+
+              <tr>
+                <td>Profile of</td>
+                <td><a href="http://purl.org/dc/terms/title">Title</a> (<a href="http://purl.org/dc/terms/title">dcterms:title</a>)</td>
+              </tr>
+
+              <tr>
+                <td>Label from vocabulary</td>
+                <td>Title</td>
+              </tr>
+
+
+            </table>
+          </section>
+          <section id="o22w6ot5bw7ly72exji">
+            <h4>distribution title</h4>
+
+            <table class="def">
+              <tr>
+                <td>IRI</td>
+                <td><a href="distribution-title-profile">distribution-title-profile</a></td>
+              </tr>
+              <tr>
+                <td>Label</td>
+                <td>distribution title</td>
+              </tr>
+              <tr>
+                <td>Definition</td>
+                <td>A name given to the resource.</td>
+              </tr>
+              <tr>
+                <td>Domain</td>
+                <td><a href="#distribution">Distribution</a></td>
+              </tr>
+              <tr>
+                <td>Range</td>
+                <td><a href="https://datagov-cz.github.io/cache-slovniku/rdfs.ttl#literal">Literal</a></td>
+              </tr>
+
+              <tr>
+                <td>Profile of</td>
+                <td><a href="http://purl.org/dc/terms/title">Title</a> (<a href="http://purl.org/dc/terms/title">dcterms:title</a>)</td>
+              </tr>
+
+              <tr>
+                <td>Label from vocabulary</td>
+                <td>Title</td>
+              </tr>
+
+
+            </table>
+          </section>
+          <section id="6c53eid1er8ly72lhwc">
+            <h4>resource description</h4>
+
+            <table class="def">
+              <tr>
+                <td>IRI</td>
+                <td><a href="http://purl.org/dc/terms/description-profile">dcterms:description-profile</a></td>
+              </tr>
+              <tr>
+                <td>Label</td>
+                <td>resource description</td>
+              </tr>
+              <tr>
+                <td>Definition</td>
+                <td>An account of the resource.</td>
+              </tr>
+              <tr>
+                <td>Domain</td>
+                <td><a href="#cataloged-resource">Cataloged Resource</a></td>
+              </tr>
+              <tr>
+                <td>Range</td>
+                <td><a href="https://datagov-cz.github.io/cache-slovniku/rdfs.ttl#literal">Literal</a></td>
+              </tr>
+
+              <tr>
+                <td>Profile of</td>
+                <td><a href="https://datagov-cz.github.io/cache-slovniku/dublin_core_terms.ttl#null">Description</a> (<a href="http://purl.org/dc/terms/description">dcterms:description</a>)</td>
+              </tr>
+
+              <tr>
+                <td>Label from vocabulary</td>
+                <td>Description</td>
+              </tr>
+
+
+            </table>
+          </section>
+          <section id="2ihjiemuze4ly72mf66">
+            <h4>distribution description</h4>
+
+            <table class="def">
+              <tr>
+                <td>IRI</td>
+                <td><a href="http://purl.org/dc/terms/description-profile">dcterms:description-profile</a></td>
+              </tr>
+              <tr>
+                <td>Label</td>
+                <td>distribution description</td>
+              </tr>
+              <tr>
+                <td>Definition</td>
+                <td>An account of the resource.</td>
+              </tr>
+              <tr>
+                <td>Domain</td>
+                <td><a href="#distribution">Distribution</a></td>
+              </tr>
+              <tr>
+                <td>Range</td>
+                <td><a href="https://datagov-cz.github.io/cache-slovniku/rdfs.ttl#literal">Literal</a></td>
+              </tr>
+
+              <tr>
+                <td>Profile of</td>
+                <td><a href="https://datagov-cz.github.io/cache-slovniku/dublin_core_terms.ttl#null">Description</a> (<a href="http://purl.org/dc/terms/description">dcterms:description</a>)</td>
+              </tr>
+
+              <tr>
+                <td>Label from vocabulary</td>
+                <td>Description</td>
+              </tr>
+
+
+            </table>
+          </section>
+          <section id="2ztnve7sr2gly72puvq">
+            <h4>Publisher</h4>
+
+            <table class="def">
+              <tr>
+                <td>IRI</td>
+                <td><a href="publisher-profile">publisher-profile</a></td>
+              </tr>
+              <tr>
+                <td>Label</td>
+                <td>Publisher</td>
+              </tr>
+              <tr>
+                <td>Definition</td>
+                <td>An entity responsible for making the resource available.</td>
+              </tr>
+              <tr>
+                <td>Domain</td>
+                <td><a href="#catalog">Catalog</a></td>
+              </tr>
+              <tr>
+                <td>Range</td>
+                <td><a href="#agent">Agent</a></td>
+              </tr>
+
+              <tr>
+                <td>Profile of</td>
+                <td><a href="https://datagov-cz.github.io/cache-slovniku/dublin_core_terms.ttl#null">Publisher</a> (<a href="http://purl.org/dc/terms/publisher">dcterms:publisher</a>)</td>
+              </tr>
+
+
+
+            </table>
+          </section>
+      </section>
+
+      <section>
+        <h1>Attachments</h1>
+        <table class="def">
+            <tr>
+              <td>Vocabulary</td>
+              <td><a href="./model.owl.ttl">./model.owl.ttl</a></td>
+            </tr>
+            <tr>
+              <td>Application profile</td>
+              <td><a href="./dsv.ttl">./dsv.ttl</a></td>
+            </tr>
+        </table>
+      </section>
+    </body>
+  </html>
