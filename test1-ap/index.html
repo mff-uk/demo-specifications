@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+  
+  
+  <html>
+    <head>
+      <meta charset="utf-8" />
+      <title>DCAT-AP</title>
+      <meta name="color-scheme" content="light dark">
+      <script type="application/ld+json">
+        {
+  "@id": ".",
+  "@type": [
+    "http://purl.org/dc/terms/Standard",
+    "http://www.w3.org/2002/07/owl#Ontology"
+  ],
+  "http://purl.org/dc/terms/title": [
+    {
+      "@language": "en",
+      "@value": "DCAT-AP"
+    }
+  ],
+  "https://w3id.org/dsv#artefact": [
+    {
+      "@type": [
+        "http://www.w3.org/ns/dx/prof/ResourceDescriptor"
+      ],
+      "http://www.w3.org/ns/dx/prof/hasArtifact": [
+        {
+          "@id": "./model.owl.ttl"
+        }
+      ],
+      "http://www.w3.org/ns/dx/prof/hasRole": [
+        {
+          "@id": "http://www.w3.org/ns/dx/prof/role/vocabulary"
+        }
+      ]
+    },
+    {
+      "@type": [
+        "http://www.w3.org/ns/dx/prof/ResourceDescriptor"
+      ],
+      "http://www.w3.org/ns/dx/prof/hasArtifact": [
+        {
+          "@id": "./dsv.ttl"
+        }
+      ],
+      "http://www.w3.org/ns/dx/prof/hasRole": [
+        {
+          "@id": "http://www.w3.org/ns/dx/prof/role/schema"
+        }
+      ]
+    },
+    {
+      "@type": [
+        "http://www.w3.org/ns/dx/prof/ResourceDescriptor"
+      ],
+      "http://www.w3.org/ns/dx/prof/hasArtifact": [
+        {
+          "@id": "."
+        }
+      ],
+      "http://www.w3.org/ns/dx/prof/hasRole": [
+        {
+          "@id": "http://www.w3.org/ns/dx/prof/role/specification"
+        }
+      ]
+    }
+  ],
+  "https://w3id.org/dsv#usedVocabularies": [
+    [
+      {
+        "@id": "https://mff-uk.github.io/demo-specifications/test1-dap/"
+      }
+    ]
+  ]
+}
+      </script>
+      <script
+        src="https://www.w3.org/Tools/respec/respec-w3c"
+        class="remove"
+        defer
+      ></script>
+      <script class="remove">
+        // All config options at https://respec.org/docs/
+        var respecConfig = {
+          specStatus: "unofficial",
+          editors: [{ name: "Dataspecer", url: "https://dataspecer.com" }],
+          //github: "some-org/mySpec",
+          shortName: "todo",
+          //xref: "web-platform",
+          //group: "my-working-group",
+        };
+      </script>
+          <style>
+      .figure img, .sidefigure img, figure img, .figure object, .sidefigure object, figure object, img, .img {
+      max-width: 100%;
+      margin: auto;
+      height: auto;
+      }
+    </style>
+    </head>
+    <body>
+      <section id="abstract">
+        <p>
+          This file documents
+          <strong>DCAT-AP</strong>.</p>
+      </section>
+      
+      <!--<section id="sotd">
+      </section>-->
+
+      <section>
+        <h1>Overview</h1>
+
+          <figure>
+            <img src="./8f0f83a8-d7c2-44e7-9f7b-f6b12f1f796f.svg" alt="alt text 2" />
+            <figcaption>Overview diagram</figcaption>
+          </figure>
+
+        <h2>Classes</h2>
+        This section lists the classes matching the base namespace of this vocabulary.
+        
+
+
+            <section id="dcat-ap-special-dataset">
+              <h4>DCAT-AP Special Dataset</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="Dataset">Dataset</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>DCAT-AP Special Dataset</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>A collection of data, published or curated by a single source, and available for access or download in one or more representations.</td>
+                </tr>
+                <tr>
+                  <td>Profiles</td>
+                  <td><a href="https://mff-uk.github.io/demo-specifications/test1-dap/#dataset">Dataset</a> (<a href="Dataset">Dataset</a>)</td>
+                </tr>
+
+                <tr>
+                  <td>Label from vocabulary</td>
+                  <td>Dataset</td>
+                </tr>
+
+
+              </table>
+            </section>
+            <section id="dcat-ap-special-distribution">
+              <h4>DCAT-AP Special Distribution</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="Distribution">Distribution</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>DCAT-AP Special Distribution</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>A specific representation of a dataset. A dataset might be available in multiple serializations that may differ in various ways, including natural language, media-type or format, schematic organization, temporal and spatial resolution, level of detail or profiles (which might specify any or all of the above).</td>
+                </tr>
+                <tr>
+                  <td>Profiles</td>
+                  <td><a href="https://mff-uk.github.io/demo-specifications/test1-dap/#distribution">Distribution</a> (<a href="Distribution">Distribution</a>)</td>
+                </tr>
+
+                <tr>
+                  <td>Label from vocabulary</td>
+                  <td>Distribution</td>
+                </tr>
+
+
+              </table>
+            </section>
+
+        <h2>Properties</h2>
+
+          <section id="distribution">
+            <h4>distribution</h4>
+
+            <table class="def">
+              <tr>
+                <td>IRI</td>
+                <td><a href="distribution">distribution</a></td>
+              </tr>
+              <tr>
+                <td>Label</td>
+                <td>distribution</td>
+              </tr>
+              <tr>
+                <td>Definition</td>
+                <td>An available distribution of the dataset.</td>
+              </tr>
+              <tr>
+                <td>Domain</td>
+                <td><a href="#dcat-ap-special-dataset">DCAT-AP Special Dataset</a></td>
+              </tr>
+              <tr>
+                <td>Range</td>
+                <td><a href="#dcat-ap-special-distribution">DCAT-AP Special Distribution</a></td>
+              </tr>
+
+              <tr>
+                <td>Profile of</td>
+                <td><a href="#distribution">distribution</a> (<a href="distribution">distribution</a>)</td>
+              </tr>
+
+
+
+            </table>
+          </section>
+      </section>
+
+      <section>
+        <h1>Attachments</h1>
+        <table class="def">
+            <tr>
+              <td>Vocabulary</td>
+              <td><a href="./model.owl.ttl">./model.owl.ttl</a></td>
+            </tr>
+            <tr>
+              <td>Application profile</td>
+              <td><a href="./dsv.ttl">./dsv.ttl</a></td>
+            </tr>
+        </table>
+      </section>
+    </body>
+  </html>
