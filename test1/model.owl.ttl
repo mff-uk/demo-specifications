@@ -14,6 +14,12 @@
     rdfs:isDefinedBy :applicationProfileConceptualModel;
     rdfs:domain :Dataset;
     rdfs:range <http://www.w3.org/2001/XMLSchema#duration>.
+:distribution a rdf:Property, owl:ObjectProperty;
+    rdfs:label "distribution"@en;
+    rdfs:comment "An available distribution of the dataset."@en;
+    rdfs:isDefinedBy :applicationProfileConceptualModel;
+    rdfs:domain :Dataset;
+    rdfs:range :Distribution.
 :Role a owl:Class, rdfs:Class;
     rdfs:label "Role"@en;
     rdfs:comment "Role desc"@en;
