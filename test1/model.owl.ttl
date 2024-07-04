@@ -1,0 +1,58 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix : <http://www.w3.org/ns/dcat#>.
+
+:Dataset a owl:Class, rdfs:Class;
+    rdfs:label "Dataset"@en;
+    rdfs:comment "Dataset description"@en;
+    rdfs:isDefinedBy <https://mff-uk.github.io/demo-specifications/test2/>;
+    rdfs:subClassOf :Resource.
+:temporalResolution a rdf:Property, owl:DatatypeProperty;
+    rdfs:label "temporal resolution"@en;
+    rdfs:comment "temporal resolution desc"@en;
+    rdfs:isDefinedBy <https://mff-uk.github.io/demo-specifications/test2/>;
+    rdfs:domain :Dataset;
+    rdfs:range <http://www.w3.org/2001/XMLSchema#duration>.
+:theme a rdf:Property, owl:ObjectProperty;
+    rdfs:label "theme"@en;
+    rdfs:isDefinedBy <https://mff-uk.github.io/demo-specifications/test2/>;
+    rdfs:subPropertyOf <http://purl.org/dc/terms/subject>;
+    rdfs:domain :Dataset;
+    rdfs:range <http://www.w3.org/2004/02/skos/core#Concept>.
+:Role a owl:Class, rdfs:Class;
+    rdfs:label "Role"@en;
+    rdfs:comment "Role desc"@en;
+    rdfs:isDefinedBy <https://mff-uk.github.io/demo-specifications/test2/>;
+    rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept>.
+:Distribution a owl:Class, rdfs:Class;
+    rdfs:label "Distribution"@en;
+    rdfs:comment "dist desc"@en;
+    rdfs:isDefinedBy <https://mff-uk.github.io/demo-specifications/test2/>.
+:accessURL a rdf:Property, owl:ObjectProperty;
+    rdfs:label "access URL"@en;
+    rdfs:isDefinedBy <https://mff-uk.github.io/demo-specifications/test2/>;
+    rdfs:domain :Distribution;
+    rdfs:range rdfs:Resource.
+:Resource a owl:Class, rdfs:Class;
+    rdfs:label "Cataloged Resource"@en;
+    rdfs:comment "čšřčš"@cs, "Resource published or curated by a single agent."@en;
+    rdfs:isDefinedBy <https://mff-uk.github.io/demo-specifications/test2/>.
+:theme a rdf:Property, owl:ObjectProperty;
+    rdfs:label "theme"@en;
+    rdfs:comment "theme desc"@en;
+    rdfs:isDefinedBy <https://mff-uk.github.io/demo-specifications/test2/>;
+    rdfs:subPropertyOf <http://purl.org/dc/terms/subject>;
+    rdfs:domain :Resource;
+    rdfs:range <http://www.w3.org/2004/02/skos/core#Concept>.
+:Catalog a owl:Class, rdfs:Class;
+    rdfs:label "Catalog"@en;
+    rdfs:comment "A curated collection of metadata about resources."@en;
+    rdfs:isDefinedBy <https://mff-uk.github.io/demo-specifications/test2/>;
+    rdfs:subClassOf :Dataset.
+:themeTaxonomy a rdf:Property, owl:ObjectProperty;
+    rdfs:label "theme taxonomy"@en;
+    rdfs:comment "theme tax. desc"@en;
+    rdfs:isDefinedBy <https://mff-uk.github.io/demo-specifications/test2/>;
+    rdfs:domain :Catalog;
+    rdfs:range <http://www.w3.org/2004/02/skos/core#ConceptScheme>.
