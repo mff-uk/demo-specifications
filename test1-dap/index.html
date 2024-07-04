@@ -87,9 +87,9 @@
         // All config options at https://respec.org/docs/
         var respecConfig = {
           specStatus: "unofficial",
-          editors: [{ name: "Dataspecer", url: "https://dataspecer.com" }]
+          editors: [{ name: "Dataspecer", url: "https://dataspecer.com" }],
           //github: "some-org/mySpec",
-          //shortName: "todo",
+          shortName: "todo",
           //xref: "web-platform",
           //group: "my-working-group",
         };
@@ -116,7 +116,7 @@
         <h1>Overview</h1>
 
           <figure>
-            <img src="./e7e7aa7c-d0f2-4374-8fb6-ee5b46c9ee20.svg" alt="alt text 2" />
+            <img src="./7d85cd4b-2223-489f-94c6-f6600c22b4e0.svg" alt="alt text 2" />
             <figcaption>Overview diagram</figcaption>
           </figure>
 
@@ -125,17 +125,17 @@
         
 
 
-            <section id="cataloged-resource">
-              <h4>Cataloged Resource</h4>
+            <section id="catalogued-resource">
+              <h4>Catalogued resource</h4>
 
               <table class="def">
                 <tr>
                   <td>IRI</td>
-                  <td><a href="Resource-profile">Resource-profile</a></td>
+                  <td><a href="Resource">Resource</a></td>
                 </tr>
                 <tr>
                   <td>Label</td>
-                  <td>Cataloged Resource</td>
+                  <td>Catalogued resource</td>
                 </tr>
                 <tr>
                   <td>Definition</td>
@@ -143,7 +143,7 @@
                 </tr>
                 <tr>
                   <td>Profiles</td>
-                  <td><a href="https://mff-uk.github.io/demo-specifications/test1/#cataloged-resource">Cataloged Resource</a> (<a href="http://www.w3.org/ns/dcat#Resource">dcat:Resource</a>)</td>
+                  <td><a href="https://mff-uk.github.io/demo-specifications/test1/#catalogued-resource">Catalogued resource</a> (<a href="http://www.w3.org/ns/dcat#Resource">dcat:Resource</a>)</td>
                 </tr>
 
 
@@ -156,7 +156,7 @@
               <table class="def">
                 <tr>
                   <td>IRI</td>
-                  <td><a href="Distribution-profile">Distribution-profile</a></td>
+                  <td><a href="Distribution">Distribution</a></td>
                 </tr>
                 <tr>
                   <td>Label</td>
@@ -164,36 +164,11 @@
                 </tr>
                 <tr>
                   <td>Definition</td>
-                  <td>dist desc</td>
+                  <td>A specific representation of a dataset. A dataset might be available in multiple serializations that may differ in various ways, including natural language, media-type or format, schematic organization, temporal and spatial resolution, level of detail or profiles (which might specify any or all of the above).</td>
                 </tr>
                 <tr>
                   <td>Profiles</td>
                   <td><a href="https://mff-uk.github.io/demo-specifications/test1/#distribution">Distribution</a> (<a href="http://www.w3.org/ns/dcat#Distribution">dcat:Distribution</a>)</td>
-                </tr>
-
-
-
-              </table>
-            </section>
-            <section id="catalog">
-              <h4>Catalog</h4>
-
-              <table class="def">
-                <tr>
-                  <td>IRI</td>
-                  <td><a href="Catalog-profile">Catalog-profile</a></td>
-                </tr>
-                <tr>
-                  <td>Label</td>
-                  <td>Catalog</td>
-                </tr>
-                <tr>
-                  <td>Definition</td>
-                  <td>A curated collection of metadata about resources.</td>
-                </tr>
-                <tr>
-                  <td>Profiles</td>
-                  <td><a href="https://mff-uk.github.io/demo-specifications/test1/#catalog">Catalog</a> (<a href="http://www.w3.org/ns/dcat#Catalog">dcat:Catalog</a>)</td>
                 </tr>
 
 
@@ -206,7 +181,7 @@
               <table class="def">
                 <tr>
                   <td>IRI</td>
-                  <td><a href="Dataset-profile">Dataset-profile</a></td>
+                  <td><a href="Dataset">Dataset</a></td>
                 </tr>
                 <tr>
                   <td>Label</td>
@@ -214,11 +189,36 @@
                 </tr>
                 <tr>
                   <td>Definition</td>
-                  <td>Dataset description</td>
+                  <td>A collection of data, published or curated by a single source, and available for access or download in one or more representations.</td>
                 </tr>
                 <tr>
                   <td>Profiles</td>
                   <td><a href="https://mff-uk.github.io/demo-specifications/test1/#dataset">Dataset</a> (<a href="http://www.w3.org/ns/dcat#Dataset">dcat:Dataset</a>)</td>
+                </tr>
+
+
+
+              </table>
+            </section>
+            <section id="catalog">
+              <h4>Catalog</h4>
+
+              <table class="def">
+                <tr>
+                  <td>IRI</td>
+                  <td><a href="Catalog">Catalog</a></td>
+                </tr>
+                <tr>
+                  <td>Label</td>
+                  <td>Catalog</td>
+                </tr>
+                <tr>
+                  <td>Definition</td>
+                  <td>A curated collection of metadata about resources (e.g., datasets and data services in the context of a data catalog).</td>
+                </tr>
+                <tr>
+                  <td>Profiles</td>
+                  <td><a href="https://mff-uk.github.io/demo-specifications/test1/#catalog">Catalog</a> (<a href="http://www.w3.org/ns/dcat#Catalog">dcat:Catalog</a>)</td>
                 </tr>
 
 
@@ -231,7 +231,7 @@
               <table class="def">
                 <tr>
                   <td>IRI</td>
-                  <td><a href="Agent-profile">Agent-profile</a></td>
+                  <td><a href="Agent">Agent</a></td>
                 </tr>
                 <tr>
                   <td>Label</td>
@@ -253,17 +253,17 @@
 
         <h2>Properties</h2>
 
-          <section id="atp7dyxsoytly727182">
-            <h4>resource title</h4>
+          <section id="resource-title">
+            <h4>Resource title</h4>
 
             <table class="def">
               <tr>
                 <td>IRI</td>
-                <td><a href="title-profile-resource">title-profile-resource</a></td>
+                <td><a href="dct-title-resource">dct-title-resource</a></td>
               </tr>
               <tr>
                 <td>Label</td>
-                <td>resource title</td>
+                <td>Resource title</td>
               </tr>
               <tr>
                 <td>Definition</td>
@@ -271,7 +271,7 @@
               </tr>
               <tr>
                 <td>Domain</td>
-                <td><a href="#cataloged-resource">Cataloged Resource</a></td>
+                <td><a href="#catalogued-resource">Catalogued resource</a></td>
               </tr>
               <tr>
                 <td>Range</td>
@@ -280,7 +280,7 @@
 
               <tr>
                 <td>Profile of</td>
-                <td><a href="http://purl.org/dc/terms/title">Title</a> (<a href="http://purl.org/dc/terms/title">dcterms:title</a>)</td>
+                <td><a href="https://datagov-cz.github.io/cache-slovniku/dublin_core_terms.ttl#title">Title</a> (<a href="http://purl.org/dc/terms/title">dcterms:title</a>)</td>
               </tr>
 
               <tr>
@@ -291,17 +291,17 @@
 
             </table>
           </section>
-          <section id="o22w6ot5bw7ly72exji">
-            <h4>distribution title</h4>
+          <section id="distribution-title">
+            <h4>Distribution title</h4>
 
             <table class="def">
               <tr>
                 <td>IRI</td>
-                <td><a href="distribution-title-profile">distribution-title-profile</a></td>
+                <td><a href="dct-title-distribution">dct-title-distribution</a></td>
               </tr>
               <tr>
                 <td>Label</td>
-                <td>distribution title</td>
+                <td>Distribution title</td>
               </tr>
               <tr>
                 <td>Definition</td>
@@ -318,7 +318,7 @@
 
               <tr>
                 <td>Profile of</td>
-                <td><a href="http://purl.org/dc/terms/title">Title</a> (<a href="http://purl.org/dc/terms/title">dcterms:title</a>)</td>
+                <td><a href="https://datagov-cz.github.io/cache-slovniku/dublin_core_terms.ttl#title">Title</a> (<a href="http://purl.org/dc/terms/title">dcterms:title</a>)</td>
               </tr>
 
               <tr>
@@ -329,17 +329,17 @@
 
             </table>
           </section>
-          <section id="6c53eid1er8ly72lhwc">
-            <h4>resource description</h4>
+          <section id="resource-description">
+            <h4>Resource description</h4>
 
             <table class="def">
               <tr>
                 <td>IRI</td>
-                <td><a href="http://purl.org/dc/terms/description-profile">dcterms:description-profile</a></td>
+                <td><a href="dct-description-resource">dct-description-resource</a></td>
               </tr>
               <tr>
                 <td>Label</td>
-                <td>resource description</td>
+                <td>Resource description</td>
               </tr>
               <tr>
                 <td>Definition</td>
@@ -347,7 +347,7 @@
               </tr>
               <tr>
                 <td>Domain</td>
-                <td><a href="#cataloged-resource">Cataloged Resource</a></td>
+                <td><a href="#catalogued-resource">Catalogued resource</a></td>
               </tr>
               <tr>
                 <td>Range</td>
@@ -356,7 +356,7 @@
 
               <tr>
                 <td>Profile of</td>
-                <td><a href="https://datagov-cz.github.io/cache-slovniku/dublin_core_terms.ttl#null">Description</a> (<a href="http://purl.org/dc/terms/description">dcterms:description</a>)</td>
+                <td><a href="https://datagov-cz.github.io/cache-slovniku/dublin_core_terms.ttl#description">Description</a> (<a href="http://purl.org/dc/terms/description">dcterms:description</a>)</td>
               </tr>
 
               <tr>
@@ -367,17 +367,17 @@
 
             </table>
           </section>
-          <section id="2ihjiemuze4ly72mf66">
-            <h4>distribution description</h4>
+          <section id="distribution-description">
+            <h4>Distribution description</h4>
 
             <table class="def">
               <tr>
                 <td>IRI</td>
-                <td><a href="http://purl.org/dc/terms/description-profile">dcterms:description-profile</a></td>
+                <td><a href="dct-description-distribution">dct-description-distribution</a></td>
               </tr>
               <tr>
                 <td>Label</td>
-                <td>distribution description</td>
+                <td>Distribution description</td>
               </tr>
               <tr>
                 <td>Definition</td>
@@ -394,7 +394,7 @@
 
               <tr>
                 <td>Profile of</td>
-                <td><a href="https://datagov-cz.github.io/cache-slovniku/dublin_core_terms.ttl#null">Description</a> (<a href="http://purl.org/dc/terms/description">dcterms:description</a>)</td>
+                <td><a href="https://datagov-cz.github.io/cache-slovniku/dublin_core_terms.ttl#description">Description</a> (<a href="http://purl.org/dc/terms/description">dcterms:description</a>)</td>
               </tr>
 
               <tr>
@@ -405,13 +405,13 @@
 
             </table>
           </section>
-          <section id="2ztnve7sr2gly72puvq">
+          <section id="publisher">
             <h4>Publisher</h4>
 
             <table class="def">
               <tr>
                 <td>IRI</td>
-                <td><a href="publisher-profile">publisher-profile</a></td>
+                <td><a href="dct-publisher">dct-publisher</a></td>
               </tr>
               <tr>
                 <td>Label</td>
@@ -432,7 +432,41 @@
 
               <tr>
                 <td>Profile of</td>
-                <td><a href="https://datagov-cz.github.io/cache-slovniku/dublin_core_terms.ttl#null">Publisher</a> (<a href="http://purl.org/dc/terms/publisher">dcterms:publisher</a>)</td>
+                <td><a href="https://datagov-cz.github.io/cache-slovniku/dublin_core_terms.ttl#publisher">Publisher</a> (<a href="http://purl.org/dc/terms/publisher">dcterms:publisher</a>)</td>
+              </tr>
+
+
+
+            </table>
+          </section>
+          <section id="distribution">
+            <h4>distribution</h4>
+
+            <table class="def">
+              <tr>
+                <td>IRI</td>
+                <td><a href="distribution">distribution</a></td>
+              </tr>
+              <tr>
+                <td>Label</td>
+                <td>distribution</td>
+              </tr>
+              <tr>
+                <td>Definition</td>
+                <td>An available distribution of the dataset.</td>
+              </tr>
+              <tr>
+                <td>Domain</td>
+                <td><a href="#dataset">Dataset</a></td>
+              </tr>
+              <tr>
+                <td>Range</td>
+                <td><a href="#distribution">Distribution</a></td>
+              </tr>
+
+              <tr>
+                <td>Profile of</td>
+                <td><a href="https://mff-uk.github.io/demo-specifications/test1/#distribution">distribution</a> (<a href="http://www.w3.org/ns/dcat#distribution">dcat:distribution</a>)</td>
               </tr>
 
 

@@ -8,72 +8,86 @@
 
 <https://example.org/dcat-dap#applicationProfileConceptualModel> a dsv:ConceptualModel.
 
-<https://example.org/dcat-dap#Resource-profile> dct:isPartOf <https://example.org/dcat-dap#applicationProfileConceptualModel>;
+<https://example.org/dcat-dap#Resource> dct:isPartOf <https://example.org/dcat-dap#applicationProfileConceptualModel>;
     a dsv:Profile;
     dsv:inheritsProperties skos:prefLabel;
     a dsv:ClassProfile;
     dsv:class <http://www.w3.org/ns/dcat#Resource>.
 
-<https://example.org/dcat-dap#title-profile-resource> dsv:domain <https://example.org/dcat-dap#Resource-profile>;
+<https://example.org/dcat-dap#dct-title-resource> dsv:domain <https://example.org/dcat-dap#Resource>;
     dct:isPartOf <https://example.org/dcat-dap#applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "resource title"@en;
-    dsv:inheritsProperties <http://purl.org/vocab/vann/usageNote>, dsv:cardinality;
+    skos:prefLabel "Resource title"@en;
+    dsv:inheritsProperties <http://purl.org/vocab/vann/usageNote>;
+    dsv:cardinality <https://w3id.org/dsv#1n>;
     dsv:property <http://purl.org/dc/terms/title#attribute>;
     a dsv:DatatypePropertyProfile.
-dct:description-profile dsv:domain <https://example.org/dcat-dap#Resource-profile>;
+
+<https://example.org/dcat-dap#dct-description-resource> dsv:domain <https://example.org/dcat-dap#Resource>;
     dct:isPartOf <https://example.org/dcat-dap#applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "resource description"@en;
-    dsv:inheritsProperties <http://purl.org/vocab/vann/usageNote>, dsv:cardinality;
+    skos:prefLabel "Resource description"@en;
+    dsv:inheritsProperties <http://purl.org/vocab/vann/usageNote>;
+    dsv:cardinality <https://w3id.org/dsv#0n>;
     dsv:property <http://purl.org/dc/terms/description#attribute>;
     a dsv:DatatypePropertyProfile;
     dsv:datatypePropertyRange rdfs:Literal.
 
-<https://example.org/dcat-dap#Distribution-profile> dct:isPartOf <https://example.org/dcat-dap#applicationProfileConceptualModel>;
+<https://example.org/dcat-dap#Distribution> dct:isPartOf <https://example.org/dcat-dap#applicationProfileConceptualModel>;
     a dsv:Profile;
     dsv:inheritsProperties skos:prefLabel;
     a dsv:ClassProfile;
     dsv:class <http://www.w3.org/ns/dcat#Distribution>.
 
-<https://example.org/dcat-dap#distribution-title-profile> dsv:domain <https://example.org/dcat-dap#Distribution-profile>;
+<https://example.org/dcat-dap#dct-title-distribution> dsv:domain <https://example.org/dcat-dap#Distribution>;
     dct:isPartOf <https://example.org/dcat-dap#applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "distribution title"@en;
-    dsv:inheritsProperties <http://purl.org/vocab/vann/usageNote>, dsv:cardinality;
+    skos:prefLabel "Distribution title"@en;
+    dsv:inheritsProperties <http://purl.org/vocab/vann/usageNote>;
+    dsv:cardinality <https://w3id.org/dsv#1n>;
     dsv:property <http://purl.org/dc/terms/title#attribute>;
     a dsv:DatatypePropertyProfile.
-dct:description-profile dsv:domain <https://example.org/dcat-dap#Distribution-profile>;
+
+<https://example.org/dcat-dap#dct-description-distribution> dsv:domain <https://example.org/dcat-dap#Distribution>;
     dct:isPartOf <https://example.org/dcat-dap#applicationProfileConceptualModel>;
     a dsv:Profile;
-    skos:prefLabel "distribution description"@en;
-    dsv:inheritsProperties <http://purl.org/vocab/vann/usageNote>, dsv:cardinality;
+    skos:prefLabel "Distribution description"@en;
+    dsv:inheritsProperties <http://purl.org/vocab/vann/usageNote>;
+    dsv:cardinality <https://w3id.org/dsv#0n>;
     dsv:property <http://purl.org/dc/terms/description#attribute>;
     a dsv:DatatypePropertyProfile;
     dsv:datatypePropertyRange rdfs:Literal.
 
-<https://example.org/dcat-dap#Catalog-profile> dct:isPartOf <https://example.org/dcat-dap#applicationProfileConceptualModel>;
+<https://example.org/dcat-dap#Dataset> dct:isPartOf <https://example.org/dcat-dap#applicationProfileConceptualModel>;
+    a dsv:Profile;
+    dsv:inheritsProperties skos:prefLabel;
+    a dsv:ClassProfile;
+    dsv:class <http://www.w3.org/ns/dcat#Dataset>.
+
+<https://example.org/dcat-dap#distribution> dsv:domain <https://example.org/dcat-dap#Dataset>;
+    dct:isPartOf <https://example.org/dcat-dap#applicationProfileConceptualModel>;
+    a dsv:Profile;
+    dsv:inheritsProperties skos:prefLabel, <http://purl.org/vocab/vann/usageNote>, dsv:cardinality;
+    dsv:property <http://www.w3.org/ns/dcat#distribution>;
+    a dsv:ObjectPropertyProfile;
+    dsv:objectPropertyRange <Distribution>.
+
+<https://example.org/dcat-dap#Catalog> dct:isPartOf <https://example.org/dcat-dap#applicationProfileConceptualModel>;
     a dsv:Profile;
     dsv:inheritsProperties skos:prefLabel;
     a dsv:ClassProfile;
     dsv:class <http://www.w3.org/ns/dcat#Catalog>.
 
-<https://example.org/dcat-dap#publisher-profile> dsv:domain <https://example.org/dcat-dap#Catalog-profile>;
+<https://example.org/dcat-dap#dct-publisher> dsv:domain <https://example.org/dcat-dap#Catalog>;
     dct:isPartOf <https://example.org/dcat-dap#applicationProfileConceptualModel>;
     a dsv:Profile;
     dsv:inheritsProperties skos:prefLabel, <http://purl.org/vocab/vann/usageNote>;
     dsv:cardinality <https://w3id.org/dsv#11>;
     dsv:property dct:publisher;
     a dsv:ObjectPropertyProfile;
-    dsv:objectPropertyRange <Agent-profile>.
+    dsv:objectPropertyRange <Agent>.
 
-<https://example.org/dcat-dap#Dataset-profile> dct:isPartOf <https://example.org/dcat-dap#applicationProfileConceptualModel>;
-    a dsv:Profile;
-    dsv:inheritsProperties skos:prefLabel;
-    a dsv:ClassProfile;
-    dsv:class <http://www.w3.org/ns/dcat#Dataset>.
-
-<https://example.org/dcat-dap#Agent-profile> dct:isPartOf <https://example.org/dcat-dap#applicationProfileConceptualModel>;
+<https://example.org/dcat-dap#Agent> dct:isPartOf <https://example.org/dcat-dap#applicationProfileConceptualModel>;
     a dsv:Profile;
     dsv:inheritsProperties skos:prefLabel;
     a dsv:ClassProfile;
