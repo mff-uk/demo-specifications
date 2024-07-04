@@ -6,4 +6,4 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#>.
 
 
-<https://mff-uk.github.io/demo-specifications/test2/> a dsv:ConceptualModel.
+<http://www.w3.org/ns/dcat#applicationProfileConceptualModel> a dsv:ConceptualModel.
